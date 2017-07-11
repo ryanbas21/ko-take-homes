@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 5px;
+}
+
+.formatMovie {
+  display: block;
+  padding: 10px;
+}
+
+.formatMovie:hover {
+  background: rgb(211, 211, 211);
+}
+
+.movieTitle {
+  text-decoration: none;
+}
+
+.text {
+  padding: 8px 0;
+  font-size: 20px;
+  line-height: 25px;
+}

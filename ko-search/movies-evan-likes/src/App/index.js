@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './styles.css'
-import { Filters, Results } from './components'
+import React from 'react';
+import styles from './styles.css';
+import { Filters, MovieList, Results } from './components';
 
-const App = ({ apiUrl, movieData }) => (
+const App = ({ apiUrl, movieData }) =>
   <div className={styles.page}>
     <div className={styles.appDescription}>
       <h1 className={styles.title}>Movies Evan Likes!</h1>
@@ -10,9 +10,7 @@ const App = ({ apiUrl, movieData }) => (
         Below is a (not) comprehensive list of movies that Evan really likes.
       </p>
     </div>
-    <Filters />
-    <Results />
-  </div>
-);
+    <MovieList url={apiUrl} />
+  </div>;
 
 export default App;
