@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { input, filter } from './styles.css';
 import { centeredContainer } from 'sharedStyles.css';
+import { filter } from './styles.css';
 
 const Filters = props =>
   <div className={centeredContainer}>

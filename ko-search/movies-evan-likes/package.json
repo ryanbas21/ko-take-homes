@@ -4,6 +4,7 @@
   "description": "A list of movies Evan likes!",
   "scripts": {
     "dev": "webpack-dev-server --hot --inline",
+    "test": "clear; npm run lint; tape -r babel-register src/**/*.spec.js",
     "lint": "eslint --cache --ignore-path .gitignore --ext .jsx,.js --format=node_modules/eslint-formatter-pretty ."
   },
   "repository": {
@@ -24,6 +25,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
     "css-loader": "^0.26.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
@@ -36,6 +38,7 @@
     "json-loader": "^0.5.4",
     "prettier-eslint": "^6.3.0",
     "style-loader": "^0.13.1",
+    "tape": "^4.7.0",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },
