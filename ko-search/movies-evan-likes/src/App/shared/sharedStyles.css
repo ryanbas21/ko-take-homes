@@ -5,7 +5,6 @@ body {
   height: 100%;
   width: 100%;
   font-family: sans-serif;
-  color: #5f5f5f;
 }
 
 .center {
@@ -19,16 +18,10 @@ body {
   flex-direction: column;
 }
 
-.baseTextAreaContainer {
-  display: flex;
-  height: 110px;
-  margin: 10px;
-}
-
-.baseTextArea {
-  flex: 1;
-  border-radius: 3px;
-  padding: 8px 10px;
-  font-size: 18px;
-  resize: none;
+.baseContainer {
+  border-radius: 5px;
+  max-width: 450px;
+  margin: 15px auto;
+  padding: 10px;
+  cursor: pointer;
 }

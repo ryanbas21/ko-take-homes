@@ -9,6 +9,7 @@ const App = ({ apiUrl, movieData }) =>
       <p className={styles.content}>
         Below is a (not) comprehensive list of movies that Evan really likes.
       </p>
+      <hr />
     </div>
     <MovieList url={apiUrl} />
   </div>;

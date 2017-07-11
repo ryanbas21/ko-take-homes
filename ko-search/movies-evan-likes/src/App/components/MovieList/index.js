@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import R from 'ramda';
+import { centeredContainer } from 'sharedStyles.css';
 import { Filters, Results } from '../index';
 import movieData from '../../../movieData.json';
 import MovieItem from './MovieItem';
@@ -10,12 +11,14 @@ export default class MovieList extends Component {
   state = {
     movies: createMoviesData(movieData),
   };
+
   filterByDecade = e =>
     e.target.value.length > 1
       ? this.setState({
-        movies: filterByDecade(this.state.movies),
+        movies: filterByDecade(e.target.value, this.state.movies),
       })
-      : this.state.movies;
+      : this.setState({ movies: createMoviesData(movieData) });
+
   filterByTitle = e =>
     e.target.value.length > 1
       ? this.setState({
@@ -34,11 +37,11 @@ export default class MovieList extends Component {
         movie => (movie.title === title ? { ...movie, showThoughts: !movie.showThoughts } : movie),
       ),
     });
+
   render() {
     return (
       <div className={container}>
-        <Filters filter={this.filter} /> Filters
-        <Results /> Results
+        <Filters filterByDecade={this.filterByDecade} filterByTitle={this.filterByTitle} />
         {this.state.movies.map(movie =>
           <MovieItem
             handleTitleClick={this.handleTitleClick}

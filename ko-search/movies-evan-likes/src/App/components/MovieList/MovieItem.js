@@ -1,14 +1,15 @@
 import React from 'react';
-import { container, formatMovie, movieTitle, text } from './styles.css';
+import { container, formatMovie, title, movieTitle, text } from './styles.css';
+import { centeredContainer } from 'sharedStyles.css';
 
 export default props =>
-  <div className={formatMovie} onClick={props.showEvanThoughts}>
-    <div className={text}>
+  <div className={(centeredContainer, formatMovie)} onClick={props.showEvanThoughts}>
+    <div className={(text, title)}>
       <a
         onClick={props.handleTitleClick}
         className={movieTitle}
         href="www.google.com"
-      >{`Title: ${props.title}`}</a>
+      >{`${props.title}`}</a>
       {' | '}
       {props.year}
     </div>

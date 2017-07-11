@@ -1,25 +1,31 @@
+a {
+  color: inherit;
+}
+a:hover {
+  color: red;
+}
 .container {
+  composes: baseContainer from 'sharedStyles.css';
   display: flex;
   flex-direction: column;
   align-content: center;
   padding: 5px;
+  text-align: center;
 }
-
-.formatMovie {
-  display: block;
-  padding: 10px;
+.title {
+  composes: baseTextArea from 'sharedStyles.css';
+  color: #7c795d;
+  font-family: 'Trocchi', serif;
+  font-size: 25px;
+  font-weight: normal;
+  line-height: 48px;
+  margin: 0;
 }
-
 .formatMovie:hover {
-  background: rgb(211, 211, 211);
+  opacity: 0.8;
+  background: #22c1c3;
 }
 
 .movieTitle {
   text-decoration: none;
-}
-
-.text {
-  padding: 8px 0;
-  font-size: 20px;
-  line-height: 25px;
 }
