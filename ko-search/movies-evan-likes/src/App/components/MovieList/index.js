@@ -41,7 +41,7 @@ export default class MovieList extends Component {
           .then(req => cacheRequest(req))
           .catch(err => err);
       } else {
-        const saved = localStorage.getItem(`${movie.title} ${movie.year}`);
+        const saved = JSON.parse(localStorage.getItem(`${movie.title} ${movie.year}`));
         this.setState({
           ...this.state,
           movies: this.state.movies.map(movie => ({
@@ -80,15 +80,18 @@ export default class MovieList extends Component {
     return (
       <div className={container}>
         <Filters filterByDecade={this.filterByDecade} filterByTitle={this.filterByTitle} />
-        {this.state.movies.map(movie =>
-          <MovieItem
-            handleTitleClick={this.handleTitleClick}
-            showEvanThoughts={() => this.showEvanThoughts(movie)}
-            key={`${movie.title}${movie.year}`}
-            thoughts={!movie.showThoughts ? `${movie.evanSays.slice(0, 25)}...` : movie.evanSays}
-            movie={movie}
-          />,
-        )}
+        {this.state.movies.map(movie => {
+          console.log(movie);
+          return (
+            <MovieItem
+              handleTitleClick={this.handleTitleClick}
+              showEvanThoughts={() => this.showEvanThoughts(movie)}
+              key={`${movie.title}${movie.year}`}
+              thoughts={!movie.showThoughts ? `${movie.evanSays.slice(0, 25)}...` : movie.evanSays}
+              movie={movie}
+            />
+          );
+        })}
       </div>
     );
   }
