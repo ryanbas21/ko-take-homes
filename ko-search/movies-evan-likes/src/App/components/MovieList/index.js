@@ -80,18 +80,15 @@ export default class MovieList extends Component {
     return (
       <div className={container}>
         <Filters filterByDecade={this.filterByDecade} filterByTitle={this.filterByTitle} />
-        {this.state.movies.map(movie => {
-          console.log(movie);
-          return (
-            <MovieItem
-              handleTitleClick={this.handleTitleClick}
-              showEvanThoughts={() => this.showEvanThoughts(movie)}
-              key={`${movie.title}${movie.year}`}
-              thoughts={!movie.showThoughts ? `${movie.evanSays.slice(0, 25)}...` : movie.evanSays}
-              movie={movie}
-            />
-          );
-        })}
+        {this.state.movies.map(movie => (
+          <MovieItem
+            handleTitleClick={this.handleTitleClick}
+            showEvanThoughts={() => this.showEvanThoughts(movie)}
+            key={`${movie.title}${movie.year}`}
+            thoughts={!movie.showThoughts ? `${movie.evanSays.slice(0, 25)}...` : movie.evanSays}
+            movie={movie}
+          />
+          ))}
       </div>
     );
   }
