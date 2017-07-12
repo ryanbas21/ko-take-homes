@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.centeredContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.baseContainer {
+  border-radius: 5px;
+  max-width: 450px;
+  margin: 15px auto;
+  padding: 10px;
+  cursor: pointer;
+}

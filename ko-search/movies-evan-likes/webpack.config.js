@@ -1,7 +1,8 @@
-const path = require('path')
-const baseDir = path.resolve(__dirname)
-const buildDir = path.join(baseDir, './build')
-const assetsDir = path.join(buildDir, './assets')
+const path = require('path');
+
+const baseDir = path.resolve(__dirname);
+const buildDir = path.join(baseDir, './build');
+const assetsDir = path.join(buildDir, './assets');
 
 module.exports = {
   context: baseDir,
@@ -9,7 +10,7 @@ module.exports = {
   output: {
     path: assetsDir,
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     loaders: [
@@ -19,23 +20,21 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        loader: 'json-loader',
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap'
-      }
-    ]
+        loader:
+          'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap',
+      },
+    ],
   },
   resolve: {
     extensions: ['', '.js'],
-    modulesDirectories: [
-      'shared',
-      'node_modules'
-    ]
+    modulesDirectories: ['shared', 'node_modules'],
   },
   devServer: {
     contentBase: buildDir,
-    publicPath: '/assets/'
-  }
-}
+    publicPath: '/assets/',
+  },
+};
